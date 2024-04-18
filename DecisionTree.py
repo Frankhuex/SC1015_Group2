@@ -3,11 +3,12 @@ import pandas as pd
 import seaborn as sb
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.tree import plot_tree
 class DecisionTree:
-    def __init__(self,data,x,y,depth=4):
+    def __init__(self,data,x,y,depth=10):
         self.x=x
         self.y=y
         self.x_df=pd.DataFrame(data[x])
@@ -40,9 +41,13 @@ class DecisionTree:
             return
         f, axes = plt.subplots(1, 1, figsize=(18, 24))
         sb.violinplot(x = self.x, y =self.y, data =self.xy_train, orient = "h",order=order)
-
     def apply_tree(self,depth):
         self.tree = DecisionTreeClassifier(max_depth = depth)
+        self.tree.fit(self.x_train,self.y_train)
+        self.y_train_pred=self.tree.predict(self.x_train)
+        self.y_test_pred=self.tree.predict(self.x_test)
+    def apply_RandomForest(self,n_estimators=5,depth=10):        
+        self.tree=RandomForestClassifier(n_estimators=n_estimators,criterion='gini',max_depth=depth)
         self.tree.fit(self.x_train,self.y_train)
         self.y_train_pred=self.tree.predict(self.x_train)
         self.y_test_pred=self.tree.predict(self.x_test)
