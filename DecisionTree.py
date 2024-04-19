@@ -7,6 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.tree import plot_tree
+from sklearn.preprocessing import LabelEncoder
+sb.set_theme(font_scale=1)
 class DecisionTree:
     def __init__(self,data,x,y,max_depth=10):
         self.x=x
@@ -15,7 +17,6 @@ class DecisionTree:
         self.y_df=pd.DataFrame(data[y])
         self.x_train,self.x_test,self.y_train,self.y_test= train_test_split(self.x_df, self.y_df, test_size = 0.25)
         self.xy_train= pd.concat([self.x_train, self.y_train], axis = 1).reindex(self.x_train.index)
-        self.apply_tree(max_depth)
 
     def x_information(self):
         if type(self.x)!=str:
@@ -27,20 +28,35 @@ class DecisionTree:
         print("'"+self.y+"' value counts:")
         print(self.y_train[self.y].describe())
         print()
-    def x_diagram(self):
+    def x_diagram(self,numerical=True):
         if type(self.x)!=str:
             return
-        f, axes = plt.subplots(1, 3, figsize=(24, 6))
-        sb.boxplot(data = self.x_train, orient = "h", ax = axes[0])
-        sb.histplot(data = self.x_train, ax = axes[1])
-        sb.violinplot(data = self.x_train, orient = "h", ax = axes[2])
+        if numerical:
+            f, axes = plt.subplots(1, 3, figsize=(24, 6))
+            sb.boxplot(data = self.x_train, orient = "h", ax = axes[0])
+            sb.histplot(data = self.x_train, ax = axes[1])
+            sb.violinplot(data = self.x_train, orient = "h", ax = axes[2])
+        else:
+            sb.catplot(y = self.x, data = self.x_train, kind = "count")       
     def y_diagram(self,order=None):
         sb.catplot(y = self.y, data = self.y_train, kind = "count",order=order)
-    def xy_diagram(self,order=None):
+    def xy_diagram(self,order=None,numerical=True):
         if type(self.x)!=str:
             return
-        f, axes = plt.subplots(1, 1, figsize=(18, 24))
-        sb.violinplot(x = self.x, y =self.y, data =self.xy_train, orient = "h",order=order)
+        if numerical:    
+            f, axes = plt.subplots(1, 1, figsize=(18, 24))
+            sb.violinplot(x = self.x, y =self.y, data =self.xy_train, orient = "h",order=order)
+        else:
+            self.cross_tab=pd.crosstab(self.xy_train[self.x],self.xy_train[self.y])
+            plt.figure(figsize=(8, 6))
+            sb.heatmap(self.cross_tab, annot = True, fmt=".0f", annot_kws={"size": 18})
+            plt.xlabel(self.y)
+            plt.ylabel(self.x)
+            plt.title('Relationship between Two Categorical Variables')
+            plt.show()
+
+
+
     def apply_tree(self,max_depth):
         self.tree = DecisionTreeClassifier(max_depth = max_depth)
         self.tree.fit(self.x_train,self.y_train)
