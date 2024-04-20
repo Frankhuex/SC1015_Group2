@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 sb.set_theme(font_scale=1)
 class Classification:
-    def __init__(self,data,x,y,max_depth=10):
+    def __init__(self,data,x,y):
         self.x=x
         self.y=y
         self.x_df=pd.DataFrame(data[x])
@@ -72,17 +72,22 @@ class Classification:
         self.y_train_pred=self.tree.predict(self.x_train)
         self.y_test_pred=self.tree.predict(self.x_test)
 
-    def apply_RandomForest(self,n_estimators=20,max_depth=10):      
+    def apply_RandomForest(self,
+        n_estimators=20,
+        max_depth=10,
+        min_samples_split=2,
+        min_samples_leaf=1):      
         # min_samples_split=2,min_samples_leaf=1,max_features=7,criterion='gini'  
         self.tree=RandomForestClassifier(
             n_estimators=n_estimators,
-            max_depth=max_depth
-        )
+            max_depth=max_depth,
+            min_samples_split=min_samples_split,
+            min_samples_leaf=min_samples_leaf)
         '''
-        min_samples_split=min_samples_split,
-        min_samples_leaf=min_samples_leaf,
+        min_samples_split=2,
+        min_samples_leaf=1,
         max_features=max_features,
-        criterion=criterion,
+        criterion='gini',
         '''
         self.tree.fit(self.x_train,self.y_train)
         self.y_train_pred=self.tree.predict(self.x_train)
