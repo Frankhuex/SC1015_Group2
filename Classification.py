@@ -71,6 +71,7 @@ class Classification:
         self.tree.fit(self.x_train,self.y_train)
         self.y_train_pred=self.tree.predict(self.x_train)
         self.y_test_pred=self.tree.predict(self.x_test)
+        self.max_depth=max_depth
 
     def apply_RandomForest(self,
         n_estimators=20,
@@ -100,7 +101,6 @@ class Classification:
         for name, model in models:
             scores = cross_val_score(model, self.x_df, self.y_df, cv=5, scoring='accuracy')
             mean_accuracy = scores.mean()
-            #print(f"{name} Mean Accuracy: {mean_accuracy:.4f}")
             self.model_accuracy[name]=mean_accuracy
             if mean_accuracy > self.best_accuracy:
                 self.best_accuracy = mean_accuracy
@@ -113,9 +113,11 @@ class Classification:
         f = plt.figure(figsize=(12,12))
         plot_tree(self.tree, filled=True, rounded=True, feature_names=self.x if type(self.x)!=str else [self.x])
     
-    def print_goodness(self):
+    def print_goodness(self,print_max_depth=False):
         if type(self.x)==str:
             print("'"+self.x+"':")
+        if print_max_depth:
+            print("max depth =",self.max_depth)
         print("train: ",round(self.tree.score(self.x_train, self.y_train)*100,1),"%")
         print("test: ",round(self.tree.score(self.x_test, self.y_test)*100,1),"%")
         print()
