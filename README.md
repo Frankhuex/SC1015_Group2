@@ -17,8 +17,7 @@ How are the different variables related to obesity risk prediction?
 
 ## 3.Data
 ### (1)Source:
-* “Obesity or CVD risk (Classify/Regressor/Cluster)”
-https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
+“Obesity or CVD risk (Classify/Regressor/Cluster)”: https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
 ### (2)Introduction:
 The data consist of the estimation of obesity levels in people from the countries of Mexico, Peru and Colombia, with ages between 14 and 61 and diverse eating habits and physical condition, data was collected using a web platform with a survey where anonymous users answered each question, then the information was processed obtaining 17 attributes and 2111 records. 
@@ -70,8 +69,7 @@ Age, Gender, family_fistory_with_overweight, SMOKE
 * Other models
 
 # 7.References
-* “Obesity or CVD risk (Classify/Regressor/Cluster)” \n
-https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
+“Obesity or CVD risk (Classify/Regressor/Cluster)”: https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
 # 8.Member Contributions
 * Hu Han: main code programming, slides making, idea generating, draft writing
