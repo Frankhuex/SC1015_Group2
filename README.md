@@ -54,24 +54,24 @@ Age, Gender, family_fistory_with_overweight, SMOKE
 * Obesity_Type_II: [35.0, 40.0)
 * Obesity_Type_III: [40.0, +∞)
 
-# 4.Exploratory Analysis/Visualisation
+## 4.Exploratory Analysis/Visualisation
 * Draw diagrams of the predictors and the target.
 * Draw diagrams of the relationship between the predictors and the target.
 
-# 5.Cleaning & Preprocess 
+## 5.Cleaning & Preprocess 
 * Remove missing or duplicated values.
 * Encode the categorical variables to numerical, including the target.
 
-# 6.Machine Learning Process
+## 6.Machine Learning Process
 * Single Decision Trees
 * Multivariate Decision Tree
 * Random Forest
 * Other models
 
-# 7.References
+## 7.References
 “Obesity or CVD risk (Classify/Regressor/Cluster)”: https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
-# 8.Member Contributions
+## 8.Member Contributions
 * Hu Han: main code programming, slides making, idea generating, draft writing
 * Zhu Xinuo: reference searching, topic foundation, slides making, data insight construction
 * Lai Yi: topic foundation, slides making, animation building, exploration process designs
