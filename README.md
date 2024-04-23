@@ -33,7 +33,7 @@ Consumption of food between meals (CAEC),
 Consumption of water daily (CH20), and 
 Consumption of alcohol (CALC). 
 
-#### The attributes related with the physical condition are: 
+#### Attributes related with the physical condition: 
 Calories consumption monitoring (SCC), 
 Physical activity frequency (FAF), 
 Time using technology devices (TUE), 
