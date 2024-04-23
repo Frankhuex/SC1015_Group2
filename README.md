@@ -72,6 +72,6 @@ Age, Gender, family_fistory_with_overweight, SMOKE
 Obesity or CVD risk (Classify/Regressor/Cluster): https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
 ## 8. Member Contributions
-* Hu Han: main code programming, slides making, idea generating, draft writing
+* Hu Han: main code programming, video editing, slides making, idea generating, draft writing
 * Zhu Xinuo: reference searching, topic foundation, slides making, data insight construction
-* Lai Yi: topic foundation, slides making, animation building, exploration process designs
+* Lai Yi: topic foundation, slides making, animation building, exploration process designing
