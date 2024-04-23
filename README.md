@@ -33,10 +33,10 @@ The data consist of the estimation of obesity levels in people from the countrie
 * Consumption of alcohol (CALC). 
 
 #### Attributes related with the physical condition: 
-Calories consumption monitoring (SCC), 
-Physical activity frequency (FAF), 
-Time using technology devices (TUE), 
-Transportation used (MTRANS)
+* Calories consumption monitoring (SCC), 
+* Physical activity frequency (FAF), 
+* Time using technology devices (TUE), 
+* Transportation used (MTRANS)
 
 #### Other variables:
 Age, Gender, family_fistory_with_overweight, SMOKE
@@ -70,7 +70,7 @@ Age, Gender, family_fistory_with_overweight, SMOKE
 * Other models
 
 # 7.References
-* “Obesity or CVD risk (Classify/Regressor/Cluster)”
+* “Obesity or CVD risk (Classify/Regressor/Cluster)” \n
 https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
 # 8.Member Contributions
