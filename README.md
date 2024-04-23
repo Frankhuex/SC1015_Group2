@@ -3,26 +3,26 @@
 * Members: Hu Han, Zhu Xinuo, Lai Yi
 * Main Theme: Obesity Risk Prediction
 
-## 0.Note: 
+## 0. Note: 
 * The main program is a jupyter notebook "Obesity.ipynb"
 * The classification module is put in a class "Classification" in a separate .py file "Classification.py".
 * Some lines may run very slowly, so please wait patiently.
 
 
-## 1.Motivation
+## 1. Motivation
 We aim to better inform the public about the factors related to obesity using data science techniques. Our goal is to build a model to predict obesity levels based on variables other than heights and weights, which can be useful for health screening organizations to predict the obesity risk and provide advice.
 
-## 2.Problem Definition 
+## 2. Problem Definition 
 How are the different variables related to obesity risk prediction?
 
-## 3.Data
-### (1)Source:
+## 3. Data
+### (1) Source:
 Obesity or CVD risk (Classify/Regressor/Cluster): https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
-### (2)Introduction:
+### (2) Introduction:
 The data consist of the estimation of obesity levels in people from the countries of Mexico, Peru and Colombia, with ages between 14 and 61 and diverse eating habits and physical condition, data was collected using a web platform with a survey where anonymous users answered each question, then the information was processed obtaining 17 attributes and 2111 records. 
 
-### (3)Variable Names:
+### (3) Variable Names:
 #### Attributes related with eating habits:
 * Frequent consumption of high caloric food (FAVC), 
 * Frequency of consumption of vegetables (FCVC), 
@@ -44,7 +44,7 @@ Age, Gender, family_fistory_with_overweight, SMOKE
 * Numerical Variables: Age, FCVC, NCP, CH2O, FAF, TUE
 * Categorical Variables: Gender, family_history_with_overweight, FAVC, CAEC, SMOKE, SCC, CALC, MTRANS
 
-### (4)Target variable definition:
+### (4) Target variable definition:
 * NObeyesdad: classified based on BMI Range
 * Insufficient_Weight: (0, 18.5)
 * Normal_Weight: [18.5, 25.0)
@@ -54,24 +54,24 @@ Age, Gender, family_fistory_with_overweight, SMOKE
 * Obesity_Type_II: [35.0, 40.0)
 * Obesity_Type_III: [40.0, +∞)
 
-## 4.Exploratory Analysis/Visualisation
+## 4. Exploratory Analysis/Visualisation
 * Draw diagrams of the predictors and the target.
 * Draw diagrams of the relationship between the predictors and the target.
 
-## 5.Cleaning & Preprocess 
+## 5. Cleaning & Preprocess 
 * Remove missing or duplicated values.
 * Encode the categorical variables to numerical, including the target.
 
-## 6.Machine Learning Process
+## 6. Machine Learning Process
 * Single Decision Trees
 * Multivariate Decision Tree
 * Random Forest
 * Other models
 
-## 7.References
+## 7. References
 Obesity or CVD risk (Classify/Regressor/Cluster): https://www.kaggle.com/datasets/aravindpcoder/obesity-or-cvd-risk-classifyregressorcluster
 
-## 8.Member Contributions
+## 8. Member Contributions
 * Hu Han: main code programming, slides making, idea generating, draft writing
 * Zhu Xinuo: reference searching, topic foundation, slides making, data insight construction
 * Lai Yi: topic foundation, slides making, animation building, exploration process designs
